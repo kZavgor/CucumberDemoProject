@@ -1,0 +1,24 @@
+[
+  {
+    "stage": "DEV",
+    "webURL": "https://serene-mountain-14043.herokuapp.com/",
+    "weatherAppApiURL": "https://fierce-gorge-81903.herokuapp.com/api",
+    "geolocationApiURL": null,
+    "forecastApiURL": null
+  },
+  {
+    "stage": "STAGE",
+    "webURL": null,
+    "weatherAppApiURL": null,
+    "geolocationApiURL": null,
+    "forecastApiURL": null
+  },
+  {
+    "stage": "PROD",
+    "webURL": null,
+    "weatherAppApiURL": null,
+    "geolocationApiURL": null,
+    "forecastApiURL": null
+  }
+]
+

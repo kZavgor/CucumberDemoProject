@@ -9,6 +9,9 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <source.dir>${basedir}/src</source.dir>
+    </properties>
 
     <dependencies>
 
@@ -20,8 +23,8 @@
 
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>datatable-dependencies</artifactId>
-            <version>1.0.3</version>
+            <artifactId>cucumber-junit</artifactId>
+            <version>3.0.2</version>
         </dependency>
 
         <dependency>
@@ -48,15 +51,22 @@
             <version>4.12</version>
         </dependency>
 
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>1.2.5</version>
-        </dependency>
-
     </dependencies>
 
     <build>
+
+        <sourceDirectory>${source.dir}</sourceDirectory>
+        <testSourceDirectory>${source.dir}</testSourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <includes>
+                    <include>**/*.feature</include>
+                    <include>**/*.json</include>
+                </includes>
+            </resource>
+        </resources>
 
         <plugins>
 
@@ -73,17 +83,18 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>2.22.0</version>
                 <configuration>
                     <includes>
-                        <include>**/*RunCukesTest.java</include>
+                        <include>com.serenemountain.base.RunCukesTest</include>
                     </includes>
+
+                    <systemPropertyVariables>
+                        <env.stage>DEV</env.stage>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
 
         </plugins>
-
-
     </build>
-
 </project>
