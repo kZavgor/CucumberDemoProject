@@ -12,7 +12,7 @@
     <properties>
         <source.dir>${basedir}/src</source.dir>
         <default.env.stage>DEV</default.env.stage>
-        <cucumber.test.tags>@API</cucumber.test.tags>
+        <cucumber.test.tags>@UI</cucumber.test.tags>
     </properties>
 
     <dependencies>
