@@ -1,7 +1,15 @@
 package com.serenemountain.models;
 
+/**
+ * Configuration env specific data set mode.
+ *
+ */
 public class EnvironmentData {
 
+    /**
+     * Environment stages.
+     *
+     */
     public enum EnvironmentStage {
         DEV,
         STAGE,

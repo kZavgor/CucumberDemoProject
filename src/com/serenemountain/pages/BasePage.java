@@ -5,22 +5,48 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class BasePage {
+/**
+ * Class describes pages base interactions.
+ */
+abstract class BasePage {
 
+    /**
+     * Default element wait timeout.
+     */
     private static final int DEFAULT_WEBDRIVER_WAIT = 60;
 
+    /**
+     * WebDriver instance.
+     */
     private WebDriver webDriver;
 
-    public BasePage(WebDriver webDriver) {
+    /**
+     * Constructor.
+     *
+     * @param webDriver - webDriver instance.
+     */
+     BasePage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    protected WebElement waitForElementVisible(final PageElement pageElement) {
+    /**
+     * Wait for element created in the DOM and visible.
+     *
+     * @param pageElement - element under test.
+     * @return WebElement.
+     */
+    WebElement waitForElementVisible(final PageElement pageElement) {
         WebDriverWait webDriverWait = new WebDriverWait(this.webDriver, DEFAULT_WEBDRIVER_WAIT);
         return webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(pageElement.getBy()));
     }
 
-    protected WebElement findElement(final PageElement pageElement) {
+    /**
+     * Find element in DOM.
+     *
+     * @param pageElement - element under test.
+     * @return WebElement.
+     */
+    WebElement findElement(final PageElement pageElement) {
         return this.webDriver.findElement(pageElement.getBy());
     }
 }

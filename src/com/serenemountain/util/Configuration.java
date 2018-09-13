@@ -12,12 +12,29 @@ import java.util.*;
  */
 public class Configuration {
 
+    /**
+     * Configuration file name.
+     *
+     */
     private static final String CONFIGURATION_FILE = "conf.json";
 
+    /**
+     * Default environment under test stage.
+     *
+     */
     private static final String DEFAULT_ENV_STAGE = "DEV";
 
+    /**
+     * Environment configuration data.
+     *
+     */
     private static EnvironmentData environmentData;
 
+    /**
+     * Read config data and parse environment specific data.
+     *
+     * @return EnvironmentData.
+     */
     public static EnvironmentData getEnvironmentData() {
 
         if (environmentData == null) {

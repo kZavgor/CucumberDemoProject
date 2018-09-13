@@ -7,11 +7,11 @@ Feature: Post code validation
     When  I enter "W6 0NW" post code
     Then  I should see weather forecast table
     And   I current time having "DD/MM/YYYY HH:mm:ss" format
-#
-#  @UI
-#  Scenario: Weather forecast table does not display weather properties with empty values
-#
-#    Given I am on a base page
-#    When  I enter "" post code
-#    Then  I should see weather forecast table
-#    And   I current time having "" format
+
+  @UI
+  Scenario: Weather forecast table does not display weather properties with empty values
+
+    Given I am on a base page
+    When  I enter "W6 0NW" post code
+    Then  I should see weather forecast table
+    And   Forecast should not contain properties without values

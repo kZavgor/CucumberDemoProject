@@ -11,6 +11,8 @@
 
     <properties>
         <source.dir>${basedir}/src</source.dir>
+        <default.env.stage>DEV</default.env.stage>
+        <cucumber.test.tags>@API</cucumber.test.tags>
     </properties>
 
     <dependencies>
@@ -49,6 +51,18 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.27</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.27</version>
         </dependency>
 
     </dependencies>
@@ -90,7 +104,8 @@
                     </includes>
 
                     <systemPropertyVariables>
-                        <env.stage>DEV</env.stage>
+                        <env.stage>${default.env.stage}</env.stage>
+                        <cucumber.options>-t ${cucumber.test.tags}</cucumber.options>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
